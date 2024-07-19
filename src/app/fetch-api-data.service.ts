@@ -81,10 +81,11 @@ export class FetchApiDataService {
     // User was fetched from the localStorage where it was saved upon login
     // Can be called through the "edit user" with userId both in the endpoint and body
     // Or create this endpoint
-    return this.http.get(apiUrl + 'users/' + userId, this.getAccessToken()).pipe(
-      map(this.extractResponseData),
-      catchError(this.handleError)
-    );
+    return this.http.get(apiUrl + 'users/' + userId, this.getAccessToken())
+      .pipe(
+        map(this.extractResponseData),
+        catchError(this.handleError)
+      );
   }
 
   // Making the api call for the user's favourite movies endpoint
@@ -94,7 +95,7 @@ export class FetchApiDataService {
     // In previous project, favourite movies were only filtered from the
     // returned user object, passed from MainView, held as state in the React app
     // Either create a new endpoint or prepare a similar extraction
-    return this.http.get(apiUrl + 'users/' + userId + '/movies/', this.getAccessToken())
+    return this.http.get(apiUrl + 'users/' + userId + '/movies', this.getAccessToken())
       .pipe(
         map(this.extractResponseData),
         catchError(this.handleError)
