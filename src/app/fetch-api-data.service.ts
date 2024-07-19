@@ -77,6 +77,10 @@ export class FetchApiDataService {
   // Making the api call for the user endpoint
   public getUser(userId: string): Observable<any> {
     console.log(userId);
+    // This endpoint doesn't exist in the current API
+    // User was fetched from the localStorage where it was saved upon login
+    // Can be called through the "edit user" with userId both in the endpoint and body
+    // Or create this endpoint
     return this.http.get(apiUrl + 'users/' + userId, this.getAccessToken()).pipe(
       map(this.extractResponseData),
       catchError(this.handleError)
