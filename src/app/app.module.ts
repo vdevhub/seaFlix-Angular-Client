@@ -4,6 +4,7 @@ import { provideHttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AppComponent } from './app.component';
     AppRoutingModule
   ],
   providers: [
-    provideHttpClient()
+    provideHttpClient(),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
