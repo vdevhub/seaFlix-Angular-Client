@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { UserSignupFormComponent } from './user-signup-form/user-signup-form.component';
 import { MatDialog } from '@angular/material/dialog';
+import { UserSignupFormComponent } from './user-signup-form/user-signup-form.component';
+import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +12,16 @@ export class AppComponent {
   title = 'seaFlix-Angular-Client';
 
   constructor(public dialog: MatDialog) { }
-  // This is the function that will open the dialog when the signup button is clicked  
+  // Opens the dialog when the signup button is clicked
   openUserRegistrationDialog(): void {
     this.dialog.open(UserSignupFormComponent, {
-      // Assigning the dialog a width
+      width: '280px'
+    });
+  }
+
+  // Opens the dialog when the login button is clicked
+  openUserLoginDialog(): void {
+    this.dialog.open(UserLoginFormComponent, {
       width: '280px'
     });
   }
