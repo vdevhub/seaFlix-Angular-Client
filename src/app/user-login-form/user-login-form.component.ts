@@ -5,6 +5,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 // To display notifications back to the user
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-login-form',
@@ -18,7 +19,9 @@ export class UserLoginFormComponent implements OnInit {
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
-    public snackBar: MatSnackBar) { }
+    public snackBar: MatSnackBar,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -36,12 +39,11 @@ export class UserLoginFormComponent implements OnInit {
       }
       localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem('token', result.token);
-      console.log(localStorage.getItem('user'));
-      console.log(localStorage.getItem('token'));
       this.dialogRef.close(); // This will close the modal on success!
       this.snackBar.open('Login successful!', 'OK', {
         duration: 2000
       });
+      this.router.navigate(['movies'])
     }, (result) => {
       this.snackBar.open('Login failed, please check your credentials and try again.', 'OK', {
         duration: 2000
