@@ -39,11 +39,11 @@ export class UserLoginFormComponent implements OnInit {
       console.log(localStorage.getItem('user'));
       console.log(localStorage.getItem('token'));
       this.dialogRef.close(); // This will close the modal on success!
-      this.snackBar.open(result, 'OK', {
+      this.snackBar.open('Login successful!', 'OK', {
         duration: 2000
       });
     }, (result) => {
-      this.snackBar.open(result, 'OK', {
+      this.snackBar.open('Login failed, please check your credentials and try again.', 'OK', {
         duration: 2000
       });
     });
