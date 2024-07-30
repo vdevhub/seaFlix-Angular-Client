@@ -1,13 +1,24 @@
-<div style="width: 100%; margin: 0 auto; padding-top: 70px; background-color: rgb(30, 30, 30);">
+<div style="width: 100%; min-height: 100%; margin: 0 auto; background-color: rgb(30, 30, 30); background-size: cover;">
+  <mat-toolbar style="padding: 0 5%;" color="primary">
+    <mat-icon style="color: #fff">slideshow</mat-icon>
+    <span style="margin-left: 10px;">SeaFlix</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Icon-button with account icon">
+      <mat-icon style="color: #fff">person</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Icon-button with logout icon">
+      <mat-icon style="color: #fff">logout</mat-icon>
+    </button>
+  </mat-toolbar>
 
-  <div style="width: 60%; margin: 0 auto; display: flex; gap: 20px; flex-wrap: wrap;">
-    <mat-card *ngFor="let movie of movies;" style="flex: 1 2 auto; max-width: 280px;">
-      <mat-card-header>
+  <div style="width: 60%; margin: 50px auto; display: flex; gap: 20px; flex-wrap: wrap;">
+    <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto; max-width: 300px;">
+      <mat-card-header style="min-height: 15%;">
         <mat-card-title>{{movie.Title}}</mat-card-title>
         <mat-card-subtitle>Directed by: {{movie.Director.Name}}</mat-card-subtitle>
       </mat-card-header>
-      <img src={{movie.ImagePath}} alt={{movie.Title}} />
-      <mat-card-actions>
+      <img src={{movie.ImagePath}} alt={{movie.Title}} style="max-width: 100%; max-height: 70%" />
+      <mat-card-actions style="min-height: 15%;">
         <button mat-button color="primary">
           Genre
         </button>
