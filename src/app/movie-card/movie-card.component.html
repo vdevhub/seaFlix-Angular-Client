@@ -1,16 +1,5 @@
 <div style="width: 100%; min-height: 100%; margin: 0 auto; background-color: rgb(30, 30, 30); background-size: cover;">
-  <mat-toolbar style="padding: 0 5%;" color="primary">
-    <mat-icon style="color: #fff">slideshow</mat-icon>
-    <span style="margin-left: 10px;">SeaFlix</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Icon-button with account icon">
-      <mat-icon style="color: #fff">person</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Icon-button with logout icon">
-      <mat-icon style="color: #fff">logout</mat-icon>
-    </button>
-  </mat-toolbar>
-
+  <app-navbar></app-navbar>
   <div style="width: 60%; margin: 50px auto; display: flex; gap: 20px; flex-wrap: wrap;">
     <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto; max-width: 300px;">
       <mat-card-header style="min-height: 15%;">
