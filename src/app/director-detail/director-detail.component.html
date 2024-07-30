@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{data.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Bio: {{data.bio}}</p>
+    <p>Birth: {{data.birth}}</p>
+    <p>Death: {{data.death}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="closeDetail()" color="primary">
+      Close
+    </button>
+  </mat-card-actions>
+</mat-card>
