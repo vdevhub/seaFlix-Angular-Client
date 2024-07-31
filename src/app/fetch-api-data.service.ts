@@ -123,9 +123,9 @@ export class FetchApiDataService {
   }
 
   // Making the api call for the user edit endpoint
-  public editUser(userId: string): Observable<any> {
+  public editUser(userId: string, userDetails: any): Observable<any> {
     console.log(userId);
-    return this.http.put(apiUrl + 'users/' + userId, this.getAccessToken())
+    return this.http.put(apiUrl + 'users/' + userId, userDetails, this.getAccessToken())
       .pipe(
         map(this.extractResponseData),
         catchError(this.handleError)
@@ -135,8 +135,16 @@ export class FetchApiDataService {
   // Making the api call for the delete user endpoint
   public deleteUser(userId: string): Observable<any> {
     console.log(userId);
-    return this.http.delete(apiUrl + 'users/' + userId, this.getAccessToken())
+    console.log(apiUrl + 'users/' + userId);
+    return this.http.delete(apiUrl + 'users/' + userId, {
+      responseType: 'text', headers: new HttpHeaders(
+        {
+          Authorization: 'Bearer ' + localStorage.getItem('token'),
+        }
+      )
+    })
       .pipe(
+        map(this.extractResponseData),
         catchError(this.handleError)
       );
   }

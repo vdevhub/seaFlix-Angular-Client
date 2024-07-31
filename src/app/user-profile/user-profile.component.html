@@ -1,4 +1,36 @@
 <div style="width: 100%; min-height: 100%; margin: 0 auto; background-color: rgb(30, 30, 30); background-size: cover;">
   <app-navbar></app-navbar>
-  <p style="color: #fff">This is user profile</p>
+  <mat-card style="width: 60%; margin: 40px auto;">
+    <mat-card-header>
+      <mat-card-title>Your Account</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field>
+          <input matInput [(ngModel)]="userData.Username" placeholder="Username" type="text" name="Username">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]="userData.Password" type="password" placeholder="Password" name="Password"
+            required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]="userData.Email" type="email" placeholder="Email" name="Email" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]="userData.Birthday" type="date" placeholder="Birthday" name="Birthday">
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="updateAccount()" color="primary">
+        Update Account
+      </button>
+      <button mat-raised-button (click)="deleteAccount()" color="primary">
+        Delete Account
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  <div style="width: 60%; margin: 40px auto;">
+    <h2 style="color: #fff">Favourite Movies</h2>
+  </div>
 </div>
