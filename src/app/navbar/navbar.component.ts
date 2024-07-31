@@ -26,8 +26,7 @@ export class NavbarComponent implements OnInit {
   }
 
   public logoutUser(): void {
-    localStorage.setItem('token', '');
-    localStorage.setItem('user', '');
+    localStorage.clear();
     this.snackBar.open('You have successfully logged out', 'OK', {
       duration: 2000
     });
