@@ -1,19 +1,18 @@
-<div style="width: 100%; min-height: 100%; margin: 0 auto; background-color: rgb(30, 30, 30); background-size: cover;">
+<div class="page-container">
   <app-navbar></app-navbar>
-  <div style="width: 60%; margin: 50px auto; text-align: center;">
-    <mat-form-field style="width: 50%;">
+  <div class="page-main-content">
+    <mat-form-field class="search">
       <input matInput [(ngModel)]="searchQuery" (input)="filterMovies()" placeholder="Search movies">
     </mat-form-field>
   </div>
-  <div style="width: 60%; margin: 50px auto; display: flex; gap: 20px; flex-wrap: wrap;">
-    <mat-card *ngFor="let movie of filteredMovies;"
-      style="flex: 1 1 auto; max-width: 300px; box-shadow: 0 4px 8px 0 rgba(245, 240, 240, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-      <img src={{movie.ImagePath}} alt={{movie.Title}} style="max-width: 100%; max-height: 65%; border-radius: 10px;" />
-      <mat-card-content style="min-height: 20%;">
+  <div class="cards-container">
+    <mat-card *ngFor="let movie of filteredMovies;" class="card">
+      <img src={{movie.ImagePath}} alt={{movie.Title}} class="card-image" />
+      <mat-card-content class="card-content">
         <h2>{{movie.Title}}</h2>
         <p><b>Director:</b> {{movie.Director.Name}}</p>
       </mat-card-content>
-      <mat-card-actions style="display: flex; justify-content: space-evenly; min-height: 15%;">
+      <mat-card-actions class="card-actions">
         <button mat-button color="primary" (click)="showGenre(movie)">
           Genre
         </button>
