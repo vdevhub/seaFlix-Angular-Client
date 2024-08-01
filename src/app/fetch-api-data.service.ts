@@ -104,7 +104,9 @@ export class FetchApiDataService {
   public addFavouriteMovie(userId: string, movieId: string): Observable<any> {
     console.log(userId);
     console.log(movieId);
-    return this.http.post(apiUrl + 'users/' + userId + '/' + movieId, this.getAccessToken())
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http.post(apiUrl + 'users/' + userId + '/' + movieId, {}, { headers })
       .pipe(
         map(this.extractResponseData),
         catchError(this.handleError)
@@ -115,7 +117,9 @@ export class FetchApiDataService {
   public removeFavouriteMovie(userId: string, movieId: string): Observable<any> {
     console.log(userId);
     console.log(movieId);
-    return this.http.delete(apiUrl + 'users/' + userId + '/' + movieId, this.getAccessToken())
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http.delete(apiUrl + 'users/' + userId + '/' + movieId, { headers })
       .pipe(
         map(this.extractResponseData),
         catchError(this.handleError)

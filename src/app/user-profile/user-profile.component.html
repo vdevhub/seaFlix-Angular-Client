@@ -22,15 +22,33 @@
       </form>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button (click)="updateAccount()" color="primary">
-        Update Account
-      </button>
-      <button mat-raised-button (click)="deleteAccount()" color="primary">
-        Delete Account
-      </button>
+      <button mat-raised-button (click)="updateAccount()" color="primary">Update Account</button>
+      <button mat-raised-button (click)="deleteAccount()" color="primary">Delete Account</button>
     </mat-card-actions>
   </mat-card>
   <div style="width: 60%; margin: 40px auto;">
     <h2 style="color: #fff">Favourite Movies</h2>
+  </div>
+  <div style="width: 60%; margin: 50px auto; display: flex; gap: 20px; flex-wrap: wrap;">
+    <div *ngIf="favouriteMovies.length === 0" style="color: #fff">You have no favourite movies.</div>
+    <mat-card *ngFor="let favMovie of favouriteMovies" style="flex: 1 1 auto; max-width: 300px;">
+      <mat-card-header style="min-height: 15%;">
+        <mat-card-title>{{favMovie.Title}}</mat-card-title>
+        <mat-card-subtitle>Directed by: {{favMovie.Director?.Name}}</mat-card-subtitle>
+      </mat-card-header>
+      <img src={{favMovie.ImagePath}} alt={{favMovie.Title}} style="max-width: 100%; max-height: 70%" />
+      <mat-card-actions style="min-height: 15%;">
+        <button mat-button color="primary" (click)="showGenre(favMovie)">
+          Genre
+        </button>
+        <button mat-button color="primary" (click)="showDirector(favMovie)">
+          Director
+        </button>
+        <button mat-button color="primary" (click)="showSynopsis(favMovie)">
+          Synopsis
+        </button>
+        <mat-icon (click)="removeFromFavourites(favMovie._id)">favorite</mat-icon>
+      </mat-card-actions>
+    </mat-card>
   </div>
 </div>
