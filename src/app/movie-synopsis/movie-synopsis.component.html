@@ -1,9 +1,9 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>{{data.title}}</mat-card-title>
+    <mat-card-title class="dialog-title">{{data.title}}</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <p>Synopsis: {{data.synopsis}}</p>
+    <p><b>Synopsis:</b> {{data.synopsis}}</p>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button (click)="closeDetail()" color="primary">
