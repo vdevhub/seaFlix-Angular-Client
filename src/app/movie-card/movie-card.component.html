@@ -1,7 +1,12 @@
 <div style="width: 100%; min-height: 100%; margin: 0 auto; background-color: rgb(30, 30, 30); background-size: cover;">
   <app-navbar></app-navbar>
+  <div style="width: 60%; margin: 50px auto; text-align: center;">
+    <mat-form-field style="width: 50%;">
+      <input matInput [(ngModel)]="searchQuery" (input)="filterMovies()" placeholder="Search movies">
+    </mat-form-field>
+  </div>
   <div style="width: 60%; margin: 50px auto; display: flex; gap: 20px; flex-wrap: wrap;">
-    <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto; max-width: 300px;">
+    <mat-card *ngFor="let movie of filteredMovies;" style="flex: 1 1 auto; max-width: 300px;">
       <mat-card-header style="min-height: 15%;">
         <mat-card-title>{{movie.Title}}</mat-card-title>
         <mat-card-subtitle>Directed by: {{movie.Director.Name}}</mat-card-subtitle>

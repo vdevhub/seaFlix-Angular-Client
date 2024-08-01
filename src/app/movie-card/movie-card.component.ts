@@ -13,6 +13,8 @@ import { MatDialog } from '@angular/material/dialog';
 export class MovieCardComponent implements OnInit {
   movies: any[] = [];
   currentUser: any;
+  filteredMovies: any[] = [];
+  searchQuery: string = '';
 
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -23,9 +25,19 @@ export class MovieCardComponent implements OnInit {
     this.loadUser();
   }
 
+  filterMovies(): void {
+    this.filteredMovies = this.movies.filter(movie =>
+      movie.Title.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+      movie.Director?.Name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+      movie.Genre?.Name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+      movie.Genre?.Description.toLowerCase().includes(this.searchQuery.toLowerCase())
+    );
+  }
+
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
+      this.filteredMovies = resp;
       console.log(this.movies);
       return this.movies;
     });
