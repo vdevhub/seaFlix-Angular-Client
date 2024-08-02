@@ -44,7 +44,6 @@ export class FetchApiDataService {
 
   // Making the api call for the movie endpoint
   public getMovie(movieTitle: string): Observable<any> {
-    console.log(movieTitle);
     return this.http.get(apiUrl + 'movies/' + movieTitle, this.getAccessToken())
       .pipe(
         map(this.extractResponseData),
@@ -54,7 +53,6 @@ export class FetchApiDataService {
 
   // Making the api call for the movie director endpoint
   public getDirector(directorName: string): Observable<any> {
-    console.log(directorName);
     return this.http.get(apiUrl + 'director/' + directorName, this.getAccessToken())
       .pipe(
         map(this.extractResponseData),
@@ -64,7 +62,6 @@ export class FetchApiDataService {
 
   // Making the api call for the movie genre endpoint
   public getGenre(genreName: string): Observable<any> {
-    console.log(genreName);
     return this.http.get(apiUrl + 'genre/', this.getAccessToken())
       .pipe(
         map(this.extractResponseData),
@@ -74,7 +71,6 @@ export class FetchApiDataService {
 
   // Making the api call for the user endpoint
   public getUser(userId: string): Observable<any> {
-    console.log(userId);
     // This endpoint doesn't exist in the current API
     // User was fetched from the localStorage where it was saved upon login
     // Can be called through the "edit user" with userId both in the endpoint and body
@@ -88,7 +84,6 @@ export class FetchApiDataService {
 
   // Making the api call for the user's favourite movies endpoint
   public getFavouriteMovies(userId: string): Observable<any> {
-    console.log(userId);
     // This endpoint doesn't exist in the current API
     // In previous project, favourite movies were only filtered from the
     // returned user object, passed from MainView, held as state in the React app
@@ -102,8 +97,6 @@ export class FetchApiDataService {
 
   // Making the api call to the add favourite movie endpoint
   public addFavouriteMovie(userId: string, movieId: string): Observable<any> {
-    console.log(userId);
-    console.log(movieId);
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
     return this.http.post(apiUrl + 'users/' + userId + '/' + movieId, {}, { headers })
@@ -115,8 +108,6 @@ export class FetchApiDataService {
 
   // Making the api call to the remove favourite movie endpoint
   public removeFavouriteMovie(userId: string, movieId: string): Observable<any> {
-    console.log(userId);
-    console.log(movieId);
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
     return this.http.delete(apiUrl + 'users/' + userId + '/' + movieId, { headers })
@@ -128,7 +119,6 @@ export class FetchApiDataService {
 
   // Making the api call for the user edit endpoint
   public editUser(userId: string, userDetails: any): Observable<any> {
-    console.log(userId);
     return this.http.put(apiUrl + 'users/' + userId, userDetails, this.getAccessToken())
       .pipe(
         map(this.extractResponseData),
@@ -138,8 +128,6 @@ export class FetchApiDataService {
 
   // Making the api call for the delete user endpoint
   public deleteUser(userId: string): Observable<any> {
-    console.log(userId);
-    console.log(apiUrl + 'users/' + userId);
     return this.http.delete(apiUrl + 'users/' + userId, {
       responseType: 'text', headers: new HttpHeaders(
         {

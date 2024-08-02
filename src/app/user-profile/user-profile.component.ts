@@ -32,7 +32,6 @@ export class UserProfileComponent implements OnInit {
   getUserData(): void {
     const userLS = localStorage.getItem('user') || '';
     const user = JSON.parse(userLS);
-    console.log(user);
     this.userData.Username = user.Username;
     this.userData.Email = user.Email;
     this.userData.Birthday = user.Birthday.slice(0, 10);
@@ -51,11 +50,9 @@ export class UserProfileComponent implements OnInit {
     const user = JSON.parse(userLS);
     const favouriteMovieIds = user.FavouriteMovies || [];
     this.favouriteMovies = this.allMovies.filter(movie => favouriteMovieIds.includes(movie._id));
-    console.log(this.favouriteMovies);
   }
 
   updateAccount(): void {
-    console.log(this.userData);
     const userID = JSON.parse(localStorage.getItem('user') || '')._id;
     this.fetchApiData.editUser(userID, this.userData).subscribe((result) => {
       const userUpd = {
@@ -128,7 +125,6 @@ export class UserProfileComponent implements OnInit {
   }
 
   showSynopsis(movie: any): void {
-    console.log(movie.Title);
     this.dialog.open(MovieSynopsisComponent, {
       data: {
         title: movie.Title,

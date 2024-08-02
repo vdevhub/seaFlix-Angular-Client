@@ -38,7 +38,6 @@ export class MovieCardComponent implements OnInit {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
       this.filteredMovies = resp;
-      console.log(this.movies);
       return this.movies;
     });
   }
@@ -103,7 +102,6 @@ export class MovieCardComponent implements OnInit {
   }
 
   showSynopsis(movie: any): void {
-    console.log(movie.Title);
     this.dialog.open(MovieSynopsisComponent, {
       data: {
         title: movie.Title,
