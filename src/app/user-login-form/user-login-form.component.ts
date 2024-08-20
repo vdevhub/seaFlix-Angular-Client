@@ -7,6 +7,10 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
+/**
+ * The `UserLoginFormComponent` is responsible for handling the user login functionality,
+ * including form submission, API calls, and navigation after successful login.
+ */
 @Component({
   selector: 'app-user-login-form',
   templateUrl: './user-login-form.component.html',
@@ -14,8 +18,20 @@ import { Router } from '@angular/router';
 })
 export class UserLoginFormComponent implements OnInit {
 
+  /**
+   * The user's login data containing username and password.
+   * This data is bound to the login form inputs.
+   */
   @Input() loginData = { Username: '', Password: '' };
 
+  /**
+   * Creates an instance of `UserLoginFormComponent`.
+   * 
+   * @param fetchApiData - Service for making API calls related to user authentication.
+   * @param dialogRef - Reference to the dialog opened with this component.
+   * @param snackBar - Angular Material SnackBar service for displaying notifications.
+   * @param router - Angular Router service for navigation.
+   */
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
@@ -23,10 +39,18 @@ export class UserLoginFormComponent implements OnInit {
     private router: Router
   ) { }
 
+  /**
+   * Angular lifecycle hook that is called after the component's view has been fully initialized.
+   */
   ngOnInit(): void {
   }
 
-  // This is the function responsible for sending the form inputs to the backend
+  /**
+   * Submits the login form data to the backend via the `FetchApiDataService`.
+   * On success, stores the user data and token in localStorage, closes the login dialog, 
+   * displays a success notification, and navigates to the movies view.
+   * On failure, displays an error notification.
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.loginData).subscribe((result) => {
       // Logic for a successful user login goes here! (To be implemented)
