@@ -1,4 +1,8 @@
-# SeaFlixAngularClient
+# SeaFlix Angular Client
+
+SeaFlix is an Angular web application that represents a movie database where a user can register their account, browse movies and related details (synopsis, director, genre), select favourites, and update their profile.
+
+The application leverages the [Movie API](https://movies-myflix-api-84dbf8740f2d.herokuapp.com/documentation.html) on the backend. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.1.
 
