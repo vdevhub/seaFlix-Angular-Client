@@ -8,6 +8,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 The app is hosted on [GitHub Pages](https://vdevhub.github.io/seaFlix-Angular-Client/welcome).
 
+![SeaFlixWelcome](https://github.com/user-attachments/assets/369403be-71a2-4749-8cb7-29aec7fe6e35)
+
+![SeaFlixMovies](https://github.com/user-attachments/assets/ac72034c-a716-4d51-aca4-aef8231baf89)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
