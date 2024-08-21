@@ -6,7 +6,7 @@ The application leverages the [Movie API](https://movies-myflix-api-84dbf8740f2d
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.1.
 
-The app is hosted on [Netlify](https://myflix-vdevhub.netlify.app).
+The app is hosted on [GitHub Pages](https://vdevhub.github.io/seaFlix-Angular-Client/welcome).
 
 ## Development server
 
