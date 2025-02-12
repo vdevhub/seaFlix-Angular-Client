@@ -12,6 +12,30 @@ The app is hosted on [GitHub Pages](https://vdevhub.github.io/seaFlix-Angular-Cl
 
 ![SeaFlixMovies](https://github.com/user-attachments/assets/ac72034c-a716-4d51-aca4-aef8231baf89)
 
+## Key Features
+- App should display a welcome view where users will be able to either log in or register an account.
+- Once authenticated, the user should now view all movies.
+- Filtering the list of movies with a “search” feature.
+- Each movie card contains title, director's name, image, and buttons to see genre, director details, and add/remove to favourites.
+- User is able to delete their account.
+- User is able to update their profile information.
+- On their profile view, a user is able to see their favourite movies and remove them.
+
+## Technologies
+- Angular
+- Angular CLI
+- Angular Material
+- TypeScript
+
+## Methodologies
+- Utilization of design language system (Angular)
+- Application documentation in TypeDoc
+- Writing in TypeScript, using directives and generics, static typing
+- Using template-driven forms
+- Leveraging one-way and bidirectional data bindings
+- Implementing Angular routing
+- Utilizing Angular CLI
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
