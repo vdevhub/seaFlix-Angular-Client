@@ -1,12 +1,8 @@
 # SeaFlix Angular Client
 
-SeaFlix is an Angular web application that represents a movie database where a user can register their account, browse movies and related details (synopsis, director, genre), select favourites, and update their profile.
-
-The application leverages the [Movie API](https://movies-myflix-api-84dbf8740f2d.herokuapp.com/documentation.html) on the backend. 
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.1.
-
-The app is hosted on [GitHub Pages](https://vdevhub.github.io/seaFlix-Angular-Client/welcome).
+- SeaFlix is an Angular web application that represents a movie database where a user can register their account, browse movies and related details (synopsis, director, genre), select favourites, and update their profile.
+- The application leverages the [Movie API](https://github.com/vdevhub/movie-api) on the backend.
+- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.1.
 
 ![SeaFlixWelcome](https://github.com/user-attachments/assets/369403be-71a2-4749-8cb7-29aec7fe6e35)
 
@@ -21,20 +17,20 @@ The app is hosted on [GitHub Pages](https://vdevhub.github.io/seaFlix-Angular-Cl
 - User is able to update their profile information.
 - On their profile view, a user is able to see their favourite movies and remove them.
 
-## Technologies
+## Tech
 - Angular
 - Angular CLI
 - Angular Material
 - TypeScript
 
-## Methodologies
-- Utilization of design language system (Angular)
-- Application documentation in TypeDoc
-- Writing in TypeScript, using directives and generics, static typing
-- Using template-driven forms
-- Leveraging one-way and bidirectional data bindings
-- Implementing Angular routing
-- Utilizing Angular CLI
+## Methods
+- Utilization of design language system (Angular).
+- Application documentation in TypeDoc.
+- Writing in TypeScript, using directives, generics, and static typing.
+- Using template-driven forms.
+- Leveraging one-way and bidirectional data bindings.
+- Implementing Angular routing.
+- Utilizing Angular CLI.
 
 ## Development server
 
