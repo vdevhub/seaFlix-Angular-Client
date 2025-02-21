@@ -6,7 +6,7 @@
 
 ![SeaFlixWelcome](https://github.com/user-attachments/assets/369403be-71a2-4749-8cb7-29aec7fe6e35)
 
-![SeaFlixMovies](https://github.com/user-attachments/assets/ac72034c-a716-4d51-aca4-aef8231baf89)
+![SeaFlixMain](https://github.com/user-attachments/assets/d1cad13c-aa6c-42fd-b5d7-1f023b2105d9)
 
 ## Key Features
 - App should display a welcome view where users will be able to either log in or register an account.
