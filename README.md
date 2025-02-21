@@ -3,6 +3,7 @@
 - SeaFlix is an Angular web application that represents a movie database where a user can register their account, browse movies and related details (synopsis, director, genre), select favourites, and update their profile.
 - The application leverages the [Movie API](https://github.com/vdevhub/movie-api) on the backend.
 - This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.1.
+- With this client and underlying API, this application is built with the MEAN tech stack.
 
 ![SeaFlixWelcome](https://github.com/user-attachments/assets/369403be-71a2-4749-8cb7-29aec7fe6e35)
 
